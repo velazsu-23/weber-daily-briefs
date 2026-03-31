@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWeber Growth Brief — Tuesday, March 31, 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #f8f9fa;
+    color: #1a1a2e;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .container { max-width: 780px; margin: 0 auto; padding: 24px 16px 60px; }
+
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+    border-radius: 12px;
+    padding: 28px 30px;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  .header-date { font-size: 12px; color: #93c5fd; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+  .header-title { font-size: 22px; font-weight: 800; margin-bottom: 10px; }
+  .header-signal {
+    background: rgba(255,255,255,0.12);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13.5px;
+    color: #e0f2fe;
+  }
+  .header-signal strong { color: #fff; }
+
+  /* Podcast card */
+  .podcast-card {
+    background: linear-gradient(135deg, #1e3a5f 0%, #1e40af 100%);
+    border-radius: 10px;
+    padding: 24px 26px;
+    margin-bottom: 18px;
+    color: #fff;
+  }
+  .podcast-label { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .podcast-sub { font-size: 12px; color: #93c5fd; margin-bottom: 2px; }
+  .podcast-voice { font-size: 11px; color: #bfdbfe; margin-bottom: 14px; }
+  audio { width: 100%; height: 44px; border-radius: 8px; accent-color: #60a5fa; display: block; }
+
+  /* Section cards */
+  .section {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f1f5f9;
+  }
+  .section-icon { font-size: 18px; }
+  .section-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e3a5f;
+    border-left: 4px solid #2563eb;
+    padding-left: 10px;
+    line-height: 1.3;
+  }
+
+  /* News items */
+  .news-item { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #f1f5f9; }
+  .news-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .news-headline { font-size: 14.5px; font-weight: 700; margin-bottom: 5px; }
+  .news-headline a { color: #1e3a5f; text-decoration: none; }
+  .news-headline a:hover { color: #2563eb; text-decoration: underline; }
+  .news-summary { font-size: 13.5px; color: #374151; line-height: 1.6; margin-bottom: 6px; }
+  .news-meta { font-size: 11.5px; color: #6b7280; }
+  .news-meta a { color: #6b7280; text-decoration: none; }
+  .news-meta a:hover { color: #2563eb; }
+
+  /* Tags */
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-right: 6px;
+    margin-bottom: 4px;
+  }
+  .tag-developing { background: #fef3c7; color: #b45309; }
+  .tag-new { background: #dcfce7; color: #15803d; }
+  .tag-opportunity { background: #ede9fe; color: #6d28d9; }
+  .tag-action { background: #fee2e2; color: #b91c1c; }
+
+  /* Focus prompt */
+  .focus-prompt {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border: 1px solid #bae6fd;
+    border-left: 4px solid #0ea5e9;
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 16px;
+  }
+  .focus-label { font-size: 11px; font-weight: 700; color: #0284c7; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+  .focus-question { font-size: 15.5px; font-weight: 700; color: #0c4a6e; line-height: 1.5; }
+
+  /* Developing section */
+  .developing-section {
+    background: #fffbeb;
+    border: 1px solid #fcd34d;
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 16px;
+  }
+  .dev-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #fde68a; }
+  .dev-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .dev-headline { font-size: 14px; font-weight: 700; color: #92400e; margin-bottom: 4px; }
+  .dev-meta { font-size: 11.5px; color: #b45309; margin-bottom: 6px; }
+  .dev-update { font-size: 13.5px; color: #374151; line-height: 1.55; }
+  .dev-link { color: #b45309; font-size: 12px; }
+
+  /* Quiz */
+  .quiz-section { background: #fff; border-radius: 10px; padding: 22px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
+  .quiz-title { font-size: 15px; font-weight: 700; color: #1e3a5f; border-left: 4px solid #2563eb; padding-left: 10px; margin-bottom: 16px; }
+  .quiz-progress-bar-bg { background: #e5e7eb; border-radius: 99px; height: 6px; margin-bottom: 6px; }
+  .quiz-progress-bar { background: #2563eb; height: 6px; border-radius: 99px; transition: width 0.4s ease; }
+  .quiz-counter { font-size: 12px; color: #6b7280; margin-bottom: 16px; }
+  .quiz-question { font-size: 15px; font-weight: 700; color: #1a1a2e; margin-bottom: 14px; line-height: 1.5; }
+  .quiz-options { display: flex; flex-direction: column; gap: 9px; margin-bottom: 16px; }
+  .quiz-option {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 11px 14px;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #374151;
+    background: #fafafa;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .quiz-option:hover { border-color: #2563eb; background: #eff6ff; }
+  .quiz-option.correct { border-color: #16a34a; background: #f0fdf4; color: #14532d; }
+  .quiz-option.wrong { border-color: #dc2626; background: #fef2f2; color: #7f1d1d; }
+  .quiz-option.revealed { border-color: #16a34a; background: #f0fdf4; color: #14532d; }
+  .quiz-option.disabled { pointer-events: none; opacity: 0.65; }
+  .option-letter { font-weight: 700; min-width: 20px; }
+  .quiz-explanation {
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    margin-bottom: 14px;
+    display: none;
+  }
+  .quiz-explanation.correct { background: #f0fdf4; color: #14532d; border: 1px solid #bbf7d0; }
+  .quiz-explanation.wrong { background: #fef2f2; color: #7f1d1d; border: 1px solid #fecaca; }
+  .quiz-btn {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .quiz-btn:hover { background: #1d4ed8; }
+  .quiz-btn:disabled { background: #93c5fd; cursor: not-allowed; }
+  .quiz-score-screen { text-align: center; padding: 10px 0; display: none; }
+  .quiz-score-emoji { font-size: 52px; margin-bottom: 10px; }
+  .quiz-score-num { font-size: 32px; font-weight: 800; color: #1e3a5f; margin-bottom: 6px; }
+  .quiz-score-tier { font-size: 16px; color: #374151; margin-bottom: 18px; font-weight: 600; }
+  .quiz-retake-btn {
+    background: #f1f5f9;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 9px 22px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #374151;
+    transition: background 0.15s;
+  }
+  .quiz-retake-btn:hover { background: #e2e8f0; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-date">Tuesday, March 31, 2026 · Q1 Final Day</div>
+    <div class="header-title">AWeber Growth Brief</div>
+    <div class="header-signal">
+      <strong>📡 Today's signal:</strong> Kit's 34% price hike + Mailchimp's 250-contact free cap = Q2 acquisition window for AWeber — and Microsoft's April 30 SMTP deadline is now exactly one month out.
+    </div>
+  </div>
+
+  <!-- PODCAST -->
+  <div class="podcast-card">
+    <div class="podcast-label">🎙️ Morning Podcast</div>
+    <div class="podcast-sub">~3 min listen · Today's brief read aloud</div>
+    <div class="podcast-voice">🎤 Voice: Daniel · Steady Broadcaster · via ElevenLabs</div>
+    <audio controls preload="metadata" style="width: 100%; height: 44px; border-radius: 8px; accent-color: #60a5fa;">
+      <source src="aweber-podcast-2026-03-31.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <!-- DEVELOPING STORIES -->
+  <div class="developing-section">
+    <div class="section-header" style="margin-bottom:14px; padding-bottom:10px; border-bottom:2px solid #fde68a;">
+      <span class="section-icon">🔁</span>
+      <span class="section-title" style="border-left-color:#f59e0b; color:#92400e;">Still Developing</span>
+    </div>
+
+    <div class="dev-item">
+      <div class="dev-headline">
+        <span class="tag tag-developing">Developing</span>
+        Google March 2026 Core Update Rollout
+      </div>
+      <div class="dev-meta">First tracked: Mar 30 · Day 5 of rollout</div>
+      <div class="dev-update">The update continues rolling out globally. New reporting confirms Google Discover now requires proper heading structure for content to surface — a direct impact on AWeber's blog and content hub. The broader E-E-A-T signal amplification is hitting sites with scaled AI content hardest. Expect rankings to remain volatile for another 9–10 days. <a class="dev-link" href="https://xpert.digital/en/google-march-2026-core-update/" target="_blank">→ Source</a></div>
+    </div>
+
+    <div class="dev-item">
+      <div class="dev-headline">
+        <span class="tag tag-developing">Developing</span>
+        <span class="tag tag-action">Action Required</span>
+        Microsoft SMTP Basic Auth End-of-Life (April 30)
+      </div>
+      <div class="dev-meta">First tracked: Mar 30 · Deadline: 30 days away</div>
+      <div class="dev-update">Countdown is now exactly 30 days. Microsoft's full enforcement of modern authentication for SMTP AUTH lands April 30 — any AWeber customer on legacy integrations risks delivery failure. An in-app banner or one-click OAuth migration guide this week could prevent significant list damage and a surge of support tickets. <a class="dev-link" href="https://www.braze.com/resources/articles/2026-email-deliverability-predictions" target="_blank">→ Source</a></div>
+    </div>
+
+    <div class="dev-item">
+      <div class="dev-headline">
+        <span class="tag tag-developing">Developing</span>
+        Meta Phasing Out Lookalike Audiences
+      </div>
+      <div class="dev-meta">First tracked: Mar 30 · Ongoing in 2026</div>
+      <div class="dev-update">Meta continues its Advantage+ push as the replacement for traditional lookalike audiences. New March data shows Meta testing a native buy button inside ads and expanding creator commission features with Amazon, eBay, and Temu — signaling that social commerce and email list building are converging faster than expected. Seeding Advantage+ with AWeber first-party CRM data is the recommended play. <a class="dev-link" href="https://www.retailbrew.com/stories/2026/03/24/meta-goes-deeper-into-shopping-tests-creator-commissions-on-instagram-and-new-buy-button-within-ads" target="_blank">→ Source</a></div>
+    </div>
+
+    <div class="dev-item">
+      <div class="dev-headline">
+        <span class="tag tag-developing">Developing</span>
+        <span class="tag tag-opportunity">Opportunity</span>
+        Beehiiv Expanding into Full Creator OS
+      </div>
+      <div class="dev-meta">First tracked: Mar 30 · Competitive pressure intensifying</div>
+      <div class="dev-update">No major new Beehiiv product drops today, but Kit's 34% price increase (see below) is funneling creator churn directly into Beehiiv's hands. Beehiiv's list-size-based pricing plus the expanded creator OS feature set — website builder, podcast hosting, digital products — makes the competitive gap more visible. Worth watching for any Beehiiv promotional push targeting Kit refugees. <a class="dev-link" href="https://almcorp.com/blog/beehiiv-vs-kit-vs-mailchimp-comparison/" target="_blank">→ Source</a></div>
+    </div>
+
+    <div class="dev-item" style="margin-bottom:0; padding-bottom:0; border-bottom:none;">
+      <div class="dev-headline">
+        <span class="tag tag-developing">Developing</span>
+        <span class="tag tag-opportunity">Opportunity</span>
+        Mailchimp Free Plan Contraction
+      </div>
+      <div class="dev-meta">First tracked: Mar 30 · Cap now at 250 contacts</div>
+      <div class="dev-update">Mailchimp's free plan cap at 250 contacts remains a live migration opportunity, compounded today by Kit's price hike news. The combination of two major platforms becoming less accessible to entry-level users in the same week creates a clear Q2 narrative for AWeber acquisition messaging: "email marketing that grows with you." <a class="dev-link" href="https://medium.com/@subscriptioninsider/email-marketing-tools-ranked-mailchimp-vs-kit-vs-beehiiv-2026-b0f7290a6a0f" target="_blank">→ Source</a></div>
+    </div>
+  </div>
+
+  <!-- AWEBER & COMPETITOR WATCH -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">📬</span>
+      <div class="section-title">AWeber & Competitor Watch</div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-headline">
+        <span class="tag tag-new">New</span>
+        <span class="tag tag-opportunity">Opportunity</span>
+        <a href="https://www.sender.net/reviews/kit/" target="_blank">Kit (ConvertKit) Raises Prices 34% — Creators Shopping for Alternatives</a>
+      </div>
+      <div class="news-summary">Kit's latest pricing puts 10,000 subscribers at $69/month, up from $47 — nearly $300 extra per year. Creator forums are active with users asking what alternatives exist. Combined with Mailchimp's 250-contact free tier cap, two of AWeber's biggest referral sources are simultaneously pushing price-sensitive users into the market. This is the clearest organic acquisition window AWeber has had in 2026.</div>
+      <div class="news-meta"><a href="https://www.sender.net/reviews/kit/pricing/" target="_blank">Sender.net</a> · March 2026</div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-headline">
+        <a href="https://www.omnisend.com/blog/aweber-review/" target="_blank">2026 Review Landscape: AWeber's Differentiators Under a Microscope</a>
+      </div>
+      <div class="news-summary">Recent third-party reviews flag AWeber's self-managed server infrastructure (vs. cloud outsourcing) as a genuine deliverability differentiator — but note the template library looks dated versus MailerLite and Brevo. The reviews also highlight AWeber's customer support quality as a key strength for SMB users. For growth positioning, infrastructure trust + support quality + fair pricing is a compelling narrative vs. the Kit/Mailchimp retreat.</div>
+      <div class="news-meta"><a href="https://www.omnisend.com/blog/aweber-review/" target="_blank">Omnisend</a> · 2026</div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-headline">
+        <a href="https://community.aweber.com/c/news/6" target="_blank">AWeber AI Features: Newsletter Assistant + Keyboard Shortcut Writing</a>
+      </div>
+      <div class="news-summary">AWeber's recent product updates include keyboard shortcuts for AI-powered writing in the drag-and-drop editor (slash "/" to invoke AI), an AI Newsletter Assistant that analyzes your website and audience, and enhanced workflow automation with auto-save. These are table-stakes features now — but they're ready to be highlighted in acquisition messaging targeting users leaving Kit or Mailchimp.</div>
+      <div class="news-meta"><a href="https://blog.aweber.com/updates" target="_blank">AWeber Blog</a> · Recent</div>
+    </div>
+  </div>
+
+  <!-- AI TOOLS & AUTOMATION -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🤖</span>
+      <div class="section-title">AI Tools & Automation</div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-headline">
+        <span class="tag tag-new">New</span>
+        <a href="https://blogs.workfx.ai/2026/03/31/best-ai-marketing-tools-for-workflow-automation/" target="_blank">The Shift from AI-Assisted to AI-Autonomous: It's Happening Now</a>
+      </div>
+      <div class="news-summary">The defining AI story of Q1 2026 is the jump from AI that helps humans write to AI that runs campaigns autonomously. Klaviyo's K:AI agent builds entire email sequences without human input. HubSpot's Breeze resolves support tickets end-to-end. This isn't roadmap — it's live. For AWeber, the strategic question is whether the Newsletter Assistant evolves from a writing aid to an autonomous campaign agent in the next release cycle.</div>
+      <div class="news-meta"><a href="https://blogs.workfx.ai/2026/03/30/top-ai-marketing-automation-tools-compared-2026/" target="_blank">WorkfxAI</a> · Mar 30, 2026</div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-headline">
+        <a href="https://thecmo.com/tools/best-ai-email-marketing-tools/" target="_blank">Predictive Segmentation Now Delivering 10–25% Higher Conversions vs. Rules-Based</a>
+      </div>
+      <div class="news-summary">2026 industry data shows AI-driven predictive segmentation outperforming traditional rules-based audience logic by 10–25% on conversion rates. The segment-of-one model — individualized content at optimal send times for each subscriber — is becoming a baseline expectation, not a premium feature. Platforms without native predictive send-time and segmentation are increasingly disadvantaged in head-to-head comparisons.</div>
+      <div class="news-meta"><a href="https://www.digitalapplied.com/blog/ai-email-marketing-automation-guide-2026" target="_blank">DigitalApplied</a> · 2026</div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-headline">
+        <a href="https://encharge.io/ai-email-tools/" target="_blank">Missive Enhances AI Assistant with Quick Actions and Multi-Model Support</a>
+      </div>
+      <div class="news-summary">Missive's March 2026 update expanded AI model support, added Quick Actions for in-thread task management, and improved AI summarization of long email chains. While primarily a team inbox tool rather than a mass marketing platform, this signals that AI-native email experiences are becoming a baseline expectation even in collaborative contexts — raising the bar for AWeber's own workflow UX.</div>
+      <div class="news-meta"><a href="https://encharge.io/ai-email-tools/" target="_blank">Encharge</a> · March 2026</div>
+    </div>
+  </div>
+
+  <!-- EMAIL INDUSTRY -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">📊</span>
+      <div class="section-title">Email Industry · Deliverability & Benchmarks</div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-headline">
+        <span class="tag tag-developing">Developing</span>
+        <span class="tag tag-action">Action Required</span>
+        <a href="https://www.egenconsulting.com/blog/email-deliverability-2026.html" target="_blank">DMARC Policy Tightening: "p=none" No Longer Enough for Serious Senders</a>
+      </div>
+      <div class="news-summary">Mailbox providers including Gmail, Yahoo, and Outlook are increasing trust signals for senders who've moved from p=none (monitoring only) to p=quarantine or p=reject. Senders still in monitoring mode are no longer receiving the same inbox placement signals as those with enforced policies. For AWeber's customer success team, this is a proactive onboarding talking point: help customers set up DMARC enforcement, not just monitoring.</div>
+      <div class="news-meta"><a href="https://expertsender.com/blog/email-deliverability-in-2026-key-observations-trends-challenges-for-marketers/" target="_blank">ExpertSender</a> · 2026</div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-headline">
+        <a href="https://www.braze.com/resources/articles/2026-email-deliverability-predictions" target="_blank">2026 Deliverability: Engagement-Based Inbox Placement Replaces Spam Filter Logic</a>
+      </div>
+      <div class="news-summary">Braze's 2026 deliverability research confirms that Gmail's tabs, Apple Mail's ML filters, and Outlook's Focused Inbox now all use behavioral engagement signals — not just authentication checks — to rank email. Getting into the inbox requires consistently demonstrating subscriber value. For AWeber: list hygiene, re-engagement flows, and suppression of inactive contacts are now as important as SPF/DKIM/DMARC compliance.</div>
+      <div class="news-meta"><a href="https://www.braze.com/resources/articles/2026-email-deliverability-predictions" target="_blank">Braze</a> · 2026</div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-headline">
+        <a href="https://verified.email/blog/email-marketing/trends-and-benchmarks-forecast-2026-2030" target="_blank">2026 Email Benchmark Forecast: ROI Still Leads All Digital Channels</a>
+      </div>
+      <div class="news-summary">Email continues to deliver the highest marketing ROI of any digital channel in 2026, with the advantage widening as paid social costs rise and organic reach declines. The 2026–2030 forecast from Verified.email projects email's ROI dominance accelerating as AI personalization increases relevance scores. For AWeber's growth narrative: email's fundamentals have never been stronger — timing is right to go aggressive on acquisition.</div>
+      <div class="news-meta"><a href="https://verified.email/blog/email-marketing/trends-and-benchmarks-forecast-2026-2030" target="_blank">Verified.email</a> · 2026</div>
+    </div>
+  </div>
+
+  <!-- SEO / GEO / ORGANIC -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🔍</span>
+      <div class="section-title">SEO / GEO / Organic Growth</div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-headline">
+        <span class="tag tag-developing">Developing</span>
+        <a href="https://xpert.digital/en/google-march-2026-core-update/" target="_blank">Google March Core Update: Google Discover Now Requires Heading Structure</a>
+      </div>
+      <div class="news-summary">New reporting on the March 27 Core Update reveals a specific Discover change: content without proper heading hierarchy (H1–H3 structure) is now significantly less likely to surface in Google Discover. This is an immediate technical SEO action item for AWeber's blog and help center content. Audit heading structure across high-traffic pages this week while the update is still settling.</div>
+      <div class="news-meta"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/google-s-march-2026-core-update-what-it-means-for-seo-and-content/69010368" target="_blank">Ad-Hoc News</a> · Mar 31, 2026</div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-headline">
+        <span class="tag tag-new">New</span>
+        <a href="https://www.realinternetsales.com/google-march-2026-core-update-seo-geo-ai-search-visibility/" target="_blank">GEO Is Now a Distinct Discipline — AWeber Needs a Content-for-AI-Citation Strategy</a>
+      </div>
+      <div class="news-summary">As ChatGPT, Perplexity, and Google AI Mode become primary discovery tools for small business owners researching email marketing platforms, Generative Engine Optimization (GEO) has emerged as a separate practice from traditional SEO. Being cited by AI answers requires content that is specific, verifiable, and clearly authoritative — stat-backed blog posts, benchmark data, and definitional guides. AWeber's content team should be building an explicit GEO content layer in Q2.</div>
+      <div class="news-meta"><a href="https://creativdigital.ro/en/blog/google-march-2026-core-update-save-seo-traffic-geo" target="_blank">Real Internet Sales</a> · Mar 2026</div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-headline">
+        <a href="https://almcorp.com/blog/google-march-2026-core-update/" target="_blank">Core Update's E-E-A-T Signal: Scaled AI Content Penalized, Expert AI Content Fine</a>
+      </div>
+      <div class="news-summary">The March 2026 Core Update is surgical: mass-produced AI content without human expertise is being penalized, while AI-assisted content with genuine first-hand insight is largely unaffected. For AWeber's content team, the green light is to continue using AI tools for drafting and optimization — but every published piece needs a layer of authentic expertise, specific examples, or original data to maintain and grow rankings.</div>
+      <div class="news-meta"><a href="https://almcorp.com/blog/google-march-2026-core-update/" target="_blank">ALM Corp</a> · Mar 2026</div>
+    </div>
+  </div>
+
+  <!-- PAID SOCIAL & REMARKETING -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">📣</span>
+      <div class="section-title">Paid Social & Remarketing</div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-headline">
+        <span class="tag tag-new">New</span>
+        <a href="https://www.retailbrew.com/stories/2026/03/24/meta-goes-deeper-into-shopping-tests-creator-commissions-on-instagram-and-new-buy-button-within-ads" target="_blank">Meta Tests Native Buy Button in Ads + Creator Commissions via Amazon, eBay, Temu</a>
+      </div>
+      <div class="news-summary">Meta is testing a buy button directly embedded inside ad units and rolling out creator affiliate commissions with Amazon, eBay, Temu, Mercado Libre, and Shopee. For AWeber: the blurring of social commerce and email acquisition is accelerating. Consider ad creative that captures purchase intent into an email list — position email as the owned-channel follow-up layer to social commerce transactions.</div>
+      <div class="news-meta"><a href="https://www.retailbrew.com/stories/2026/03/24/meta-goes-deeper-into-shopping-tests-creator-commissions-on-instagram-and-new-buy-button-within-ads" target="_blank">Retail Brew</a> · Mar 24, 2026</div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-headline">
+        <a href="https://web.swipeinsight.app/topics/meta-ads" target="_blank">Meta Ads Policy: 47 Updates in 2026 — AI Transparency and HEC Enforcement Key Pillars</a>
+      </div>
+      <div class="news-summary">Meta has issued 47 ad policy updates so far in 2026, with the three dominant themes being: AI-generated content disclosure requirements, expanded Housing/Employment/Credit (HEC) audience restrictions, and multimodal creative review (AI now scanning video and audio, not just static images). For AWeber's paid campaigns: ensure any AI-generated ad creative is flagged per Meta's disclosure requirements to avoid disapprovals.</div>
+      <div class="news-meta"><a href="https://www.auditsocials.com/blog/meta-ad-policy-updates-2026-guide" target="_blank">AuditSocials</a> · Mar 2026</div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-headline">
+        <a href="https://www.socialmediaexaminer.com/facebook-ad-algorithm-changes-for-2026-what-marketers-need-to-know/" target="_blank">Click-Through Attribution Update: Meta Now Counts Only Real Link Clicks</a>
+      </div>
+      <div class="news-summary">Meta's attribution model update now counts only genuine link clicks for website and in-store conversion attribution — filtering out accidental or low-intent clicks from the reporting window. For AWeber's paid acquisition reports: expect apparent click volume to drop in dashboards as junk clicks are removed, but conversion rate percentages should improve. Re-baseline any CPA targets against the new attribution model before Q2 reporting.</div>
+      <div class="news-meta"><a href="https://socialbee.com/blog/facebook-updates/" target="_blank">Social Media Examiner</a> · Mar 2026</div>
+    </div>
+  </div>
+
+  <!-- DAILY FOCUS PROMPT -->
+  <div class="focus-prompt">
+    <div class="focus-label">📌 Daily Focus Prompt</div>
+    <div class="focus-question">Beehiiv is positioning itself as the full "creator OS" — website, email, podcast hosting, digital products, and monetization — all under one roof, with list-size pricing undercutting traditional ESPs. AWeber has superior deliverability infrastructure and SMB support. <em>What is the one product or positioning move AWeber could make in Q2 that would make creators choose AWeber over Beehiiv, even at a higher price?</em></div>
+  </div>
+
+  <!-- QUIZ -->
+  <div class="quiz-section">
+    <div class="quiz-title">📋 Daily Brief Quiz</div>
+
+    <div id="quiz-container">
+      <div class="quiz-progress-bar-bg">
+        <div class="quiz-progress-bar" id="progress-bar" style="width: 20%;"></div>
+      </div>
+      <div class="quiz-counter" id="quiz-counter">Question 1 of 5</div>
+
+      <div id="quiz-question-area">
+        <div class="quiz-question" id="question-text"></div>
+        <div class="quiz-options" id="options-container"></div>
+        <div class="quiz-explanation" id="explanation-box"></div>
+        <button class="quiz-btn" id="next-btn" onclick="nextQuestion()" disabled>Next →</button>
+      </div>
+
+      <div class="quiz-score-screen" id="score-screen">
+        <div class="quiz-score-emoji" id="score-emoji"></div>
+        <div class="quiz-score-num" id="score-num"></div>
+        <div class="quiz-score-tier" id="score-tier"></div>
+        <button class="quiz-retake-btn" onclick="retakeQuiz()">↩ Retake Quiz</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const questions = [
+  {
+    topic: "competitor",
+    question: "Kit (formerly ConvertKit) raised its subscription prices in 2026. By what percentage did costs increase for users at the 10,000 subscriber tier?",
+    options: ["A) 15%", "B) 22%", "C) 34%", "D) 51%"],
+    correct: 2,
+    explanation: "✅ Correct! Kit raised prices 34% — from $47/month to $69/month at 10,000 subscribers — adding nearly $300 extra per year. This is actively driving creator churn and creating a Q2 acquisition opportunity for AWeber."
+  },
+  {
+    topic: "ai",
+    question: "Which email marketing platform launched a 'K:AI' agent in 2026 capable of building entire email sequences autonomously without human input?",
+    options: ["A) ActiveCampaign", "B) Klaviyo", "C) HubSpot", "D) Mailchimp"],
+    correct: 1,
+    explanation: "✅ Correct! Klaviyo's K:AI agent can autonomously build full email sequences. HubSpot's Breeze handles support tickets end-to-end — these represent the industry's move from AI-assisted to AI-autonomous marketing."
+  },
+  {
+    topic: "deliverability",
+    question: "Mailbox providers are increasingly favoring senders who've tightened their DMARC policy beyond 'p=none'. What are the two stronger DMARC enforcement settings they now signal higher trust for?",
+    options: ["A) p=softfail and p=passthrough", "B) p=quarantine and p=reject", "C) p=monitor and p=forward", "D) p=strict and p=enforce"],
+    correct: 1,
+    explanation: "✅ Correct! DMARC p=quarantine and p=reject are the enforcement-level policies that give Gmail, Yahoo, and Outlook stronger trust signals. Senders stuck in p=none (monitoring only) are no longer receiving the same inbox placement advantages."
+  },
+  {
+    topic: "seo",
+    question: "The Google March 2026 Core Update revealed a specific new requirement for content to surface in Google Discover. What is it?",
+    options: ["A) Structured schema markup on every page", "B) Embedded video content above the fold", "C) Proper heading hierarchy (H1–H3 structure)", "D) AMP-compatible page format"],
+    correct: 2,
+    explanation: "✅ Correct! New reporting confirms Google Discover now requires proper heading structure. Content without clear H1–H3 hierarchy is significantly less likely to surface in Discover feeds — an immediate audit priority for AWeber's blog and content hub."
+  },
+  {
+    topic: "paid-social",
+    question: "Meta's late March 2026 shopping expansion involves testing creator commission affiliates with a group of retail partners. Which of the following platforms is NOT part of the initial rollout?",
+    options: ["A) Amazon", "B) eBay", "C) Walmart", "D) Temu"],
+    correct: 2,
+    explanation: "✅ Correct! Walmart is not part of Meta's initial creator commission affiliate rollout. The confirmed partners are Amazon, eBay, Temu (US), Mercado Libre (Latin America), and Shopee (Asia). This signals Meta is deeply integrating social commerce into its ad ecosystem."
+  }
+];
+
+let current = 0;
+let score = 0;
+let answered = false;
+
+function renderQuestion() {
+  const q = questions[current];
+  document.getElementById('question-text').textContent = q.question;
+  document.getElementById('quiz-counter').textContent = `Question ${current + 1} of ${questions.length}`;
+  document.getElementById('progress-bar').style.width = `${((current + 1) / questions.length) * 100}%`;
+
+  const container = document.getElementById('options-container');
+  container.innerHTML = '';
+  q.options.forEach((opt, i) => {
+    const div = document.createElement('div');
+    div.className = 'quiz-option';
+    div.innerHTML = `<span class="option-letter">${opt[0]}</span><span>${opt.slice(3)}</span>`;
+    div.onclick = () => selectAnswer(i);
+    container.appendChild(div);
+  });
+
+  const expBox = document.getElementById('explanation-box');
+  expBox.style.display = 'none';
+  expBox.className = 'quiz-explanation';
+  expBox.textContent = '';
+
+  const btn = document.getElementById('next-btn');
+  btn.disabled = true;
+  btn.textContent = current === questions.length - 1 ? 'See Results 🎉' : 'Next →';
+  answered = false;
+}
+
+function selectAnswer(idx) {
+  if (answered) return;
+  answered = true;
+
+  const q = questions[current];
+  const opts = document.querySelectorAll('.quiz-option');
+  opts.forEach((o, i) => {
+    o.classList.add('disabled');
+    if (i === q.correct) o.classList.add('revealed');
+  });
+
+  const expBox = document.getElementById('explanation-box');
+
+  if (idx === q.correct) {
+    opts[idx].classList.add('correct');
+    opts[idx].classList.remove('revealed');
+    score++;
+    expBox.textContent = q.explanation;
+    expBox.className = 'quiz-explanation correct';
+  } else {
+    opts[idx].classList.add('wrong');
+    const wrongMsg = `❌ Not quite. The correct answer is ${q.options[q.correct][0]}. ` + q.explanation.replace('✅ Correct! ', '');
+    expBox.textContent = wrongMsg;
+    expBox.className = 'quiz-explanation wrong';
+  }
+
+  expBox.style.display = 'block';
+  document.getElementById('next-btn').disabled = false;
+}
+
+function nextQuestion() {
+  current++;
+  if (current >= questions.length) {
+    showScore();
+  } else {
+    renderQuestion();
+  }
+}
+
+function showScore() {
+  document.getElementById('quiz-question-area').style.display = 'none';
+  document.getElementById('quiz-counter').style.display = 'none';
+  document.querySelector('.quiz-progress-bar-bg').style.display = 'none';
+  const screen = document.getElementById('score-screen');
+  screen.style.display = 'block';
+
+  document.getElementById('score-num').textContent = `${score} / ${questions.length}`;
+
+  const tiers = [
+    { min: 5, emoji: '🏆', msg: 'Perfect score! You read the brief thoroughly.' },
+    { min: 4, emoji: '🎯', msg: 'Sharp. Nearly everything landed.' },
+    { min: 3, emoji: '📖', msg: 'Solid. Worth a quick re-read of the misses.' },
+    { min: 0, emoji: '👀', msg: 'Time to pour another coffee and re-read.' }
+  ];
+  const tier = tiers.find(t => score >= t.min);
+  document.getElementById('score-emoji').textContent = tier.emoji;
+  document.getElementById('score-tier').textContent = tier.msg;
+}
+
+function retakeQuiz() {
+  current = 0;
+  score = 0;
+  document.getElementById('quiz-question-area').style.display = 'block';
+  document.getElementById('quiz-counter').style.display = 'block';
+  document.querySelector('.quiz-progress-bar-bg').style.display = 'block';
+  document.getElementById('score-screen').style.display = 'none';
+  renderQuestion();
+}
+
+renderQuestion();
+</script>
+</body>
+</html>
